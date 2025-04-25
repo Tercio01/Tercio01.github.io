@@ -2,54 +2,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Tercio Alves Parente</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Tercio Alves Parente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-    <h1>Tercio Alves Parente</h1>
-        <nav>
-        <ul>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-        </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-        <h2>Sobre</h2>
-        <p>Bem-vindo ao meu portfólio! Sou Tercio Alves Parente, desenvolvedor web.</p>
-        </section>
-        <section id="projects">
-            <h2>Projetos</h2>
-            <div class="project">
-            <h3>Projeto 1</h3>
-                <p>Descrição do projeto 1.</p>
-            </div>
-            <div class="project">
-                <h3>Projeto 2</h3>
-                <p>Descrição do projeto 2.</p>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contato</h2>
-        <form id="contact-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Tercio Alves Parente</p>
-    </footer>
-    <script src="script.js"></script>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Tercio Alves Parente</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="#about">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#projects">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container my-4">
+        <section id="about">
+            <h2>Sobre</h2>
+            <p>Bem-vindo ao meu portfólio! Sou Tercio Alves Parente, desenvolvedor web.</p>
+        </section>
+        <section id="projects">
+            <h2>Projetos</h2>
+            <div class="project card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">Projeto 1</h3>
+                    <p class="card-text">Descrição do projeto 1.</p>
+                </div>
+            </div>
+            <div class="project card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">Projeto 2</h3>
+                    <p class="card-text">Descrição do projeto 2.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contato</h2>
+            <form id="contact-form" class="mb-3">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem:</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Tercio Alves Parente</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
