@@ -1,104 +1,1316 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Tercio Alves Parente</title>
-    <meta name="description" content="Portfólio de Tercio Alves Parente, engenheiro de software em formação, com certificações em cibersegurança e redes.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <meta name="description" content="Portfólio profissional de Tercio Alves Parente, Engenheiro de Software com especialização em Cibersegurança e Redes.">
+    <title>Tercio Alves Parente | Engenheiro de Software & Especialista em Cibersegurança</title>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS Principal -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS para animações de scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --success-color: #198754;
+            --transition-speed: 0.3s;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        /* Tema escuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .form-control {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        body.dark-mode .navbar {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+        }
+        
+        /* Barra de navegação */
+        .navbar {
+            transition: all var(--transition-speed);
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-scrolled {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), #8c43ff);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            z-index: -1;
+        }
+        
+        /* Partículas para background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* Seções */
+        section {
+            padding: 6rem 0;
+        }
+        
+        section h2 {
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Cards e elementos */
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all var(--transition-speed);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-card {
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            transition: all var(--transition-speed);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* Progress bars para habilidades */
+        .skill-progress {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Interatividade */
+        .btn {
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+            transition: all var(--transition-speed);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), #8c43ff);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #0b5ed7, #7b38e0);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Timeline para Formação */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        /* Form and inputs */
+        .form-control {
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all var(--transition-speed);
+        }
+        
+        .form-control:focus {
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            background-color: var(--dark-color);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-speed);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Animações */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            cursor: pointer;
+            width: 60px;
+            height: 30px;
+            background-color: #e9ecef;
+            border-radius: 30px;
+            position: relative;
+            transition: all var(--transition-speed);
+        }
+        
+        .theme-toggle:after {
+            content: '☀️';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: all var(--transition-speed);
+        }
+        
+        body.dark-mode .theme-toggle {
+            background-color: #6c757d;
+        }
+        
+        body.dark-mode .theme-toggle:after {
+            content: '🌙';
+            left: 33px;
+        }
+        
+        /* Typed.js cursor */
+        .typed-cursor {
+            font-size: 2rem;
+        }
+        
+        /* Loader */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Projetos */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        
+        .project-img {
+            transition: all 0.5s;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 2rem;
+            color: white;
+            transform: translateY(20%);
+            opacity: 0;
+            transition: all 0.4s;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Cursor personalizado */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: all 0.1s ease;
+            display: none;
+        }
+        
+        @media (min-width: 992px) {
+            .custom-cursor {
+                display: block;
+            }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 991.98px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
 </head>
-<body>
-    <header class="bg-dark text-white text-center py-3 animate__animated animate__fadeInDown">
-        <h1>Tercio Alves Parente</h1>
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link text-white" href="#about">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#skills">Habilidades</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#projects">Projetos</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#education">Formação</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container my-4">
-        <section id="about" class="d-flex animate__animated animate__fadeInLeft">
-            <img src="tercio.png" alt="Foto de Tercio Alves Parente" class="img-thumbnail me-3" style="width: 150px;">
-            <div>
-                <h2>Sobre</h2>
-                <p>Bem-Vindo ao meu Portfólio! Sou o Tercio Alves Parente, Engenheiro de Software em Formação, com Certificações em Cibersegurança e Redes.</p>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+
+    <!-- Loader -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TAP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Formação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <div class="theme-toggle" id="theme-toggle"></div>
+                    </li>
+                </ul>
             </div>
-        </section>
-        <section id="skills" class="animate__animated animate__fadeInRight">
-            <h2>Habilidades Técnicas</h2>
-            <ul>
-                <li>Programação orientada a objetos (POO)</li>
-                <li>Pensamento Estratégico</li>
-                <li>Scrum</li>
-                <li>XP Programming</li>
-                <li>Python</li>
-                <li>Front-End Web</li>
-                <li>Modelagem de banco de dados relacional</li>
-                <li>Segurança: Princípios OWASP, Análise de Vulnerabilidades</li>
-                <li>Ferramentas: Git, Wireshark</li>
-            </ul>
-        </section>
-        <section id="projects" class="animate__animated animate__fadeInUp">
-            <h2>Projetos</h2>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-bg"></div>
+        <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card mb-3">
-                        <img src="projeto1.jpg" class="card-img-top" alt="Imagem do Projeto 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Projeto 1</h5>
-                            <p class="card-text">Descrição do projeto 1.</p>
-                            <a href="#" class="btn btn-primary">Ver mais</a>
-                        </div>
+                <div class="col-lg-8 hero-content">
+                    <h1 class="text-white mb-3" data-aos="fade-up">Tercio Alves Parente</h1>
+                    <p class="hero-subtitle text-white" data-aos="fade-up" data-aos-delay="200">
+                        Eu sou <span id="typed-text"></span>
+                    </p>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <a href="#contact" class="btn btn-light btn-lg me-3 rounded-pill">Contato</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg rounded-pill">Ver Projetos</a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card mb-3">
-                        <img src="caminho/para/imagem_projeto2.jpg" class="card-img-top" alt="Imagem do Projeto 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Projeto 2</h5>
-                            <p class="card-text">Descrição do projeto 2.</p>
-                            <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+        </div>
+        <a href="#about" class="mouse-btn text-white position-absolute bottom-0 start-50 translate-middle-x mb-5">
+            <i class="fas fa-mouse fa-2x d-block text-center mb-2"></i>
+            <i class="fas fa-chevron-down fa-bounce"></i>
+        </a>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Sobre Mim -->
+        <section id="about" class="bg-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                        <div class="position-relative">
+                            <img src="tercio.png" alt="Tercio Alves Parente" class="img-fluid rounded-circle shadow-lg">
+                            <div class="position-absolute top-0 end-0 bg-primary text-white p-3 rounded-circle">
+                                <i class="fas fa-code fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h2 class="display-4 fw-bold mb-4">Sobre Mim</h2>
+                        <p class="lead">Engenheiro de Software em formação, especialista em Cibersegurança e Redes.</p>
+                        <p>Apaixonado por desenvolvimento seguro e soluções tecnológicas eficientes, busco constantemente aprimorar minhas habilidades técnicas para contribuir com projetos inovadores.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Formação</h5>
+                                        <p class="mb-0 text-muted">Engenharia de Software</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Experiência</h5>
+                                        <p class="mb-0 text-muted">3+ anos em desenvolvimento</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-primary me-3">Contato</a>
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                <i class="fas fa-download me-2"></i>Download CV
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="education" class="animate__animated animate__fadeInUp">
-            <h2>Formação</h2>
-            <div class="education-item">
-                <h3>Anhanguera Educacional</h3>
-                <p>Bacharelado, Engenharia de Software (Setembro de 2022 - Agosto de 2025)</p>
+
+        <!-- Habilidades -->
+        <section id="skills" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-4 fw-bold">Minhas Habilidades</h2>
+                    <p class="lead">Tecnologias e ferramentas que domino</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="mb-4">
+                            <div class="skill-name">
+                                <span>Programação orientada a objetos</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="skill-name">
+                                <span>Python</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="skill-name">
+                                <span>Front-End Web</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="mb-4">
+                            <div class="skill-name">
+                                <span>Banco de dados relacional</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="skill-name">
+                                <span>Análise de Vulnerabilidades</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="skill-name">
+                                <span>Git</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="skill-card card h-100">
+                            <div class="skill-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Desenvolvimento</h4>
+                            <p>Front-end, back-end e desenvolvimento orientado a objetos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="skill-card card h-100">
+                            <div class="skill-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Cibersegurança</h4>
+                            <p>Análise de vulnerabilidades, OWASP e metodologias de segurança.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="skill-card card h-100">
+                            <div class="skill-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h4>Gestão de Projetos</h4>
+                            <p>Scrum, XP Programming e pensamento estratégico.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="contact" class="animate__animated animate__fadeInUp">
-            <h2>Contato</h2>
-            <form id="contact-form" class="mb-3">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
+
+        <!-- Projetos -->
+        <section id="projects" class="bg-light py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-4 fw-bold">Meus Projetos</h2>
+                    <p class="lead">Alguns dos trabalhos que realizei</p>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
+                        <div class="project-card card h-100">
+                            <img src="/api/placeholder/600/400" class="card-img-top project-img" alt="Projeto 1">
+                            <div class="project-overlay">
+                                <h5>Sistema de Gerenciamento de Segurança</h5>
+                                <p class="mb-3">Desenvolvimento de um sistema integrado para gerenciamento de segurança empresarial.</p>
+                                <a href="#" class="btn btn-sm btn-light">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="100">
+                        <div class="project-card card h-100">
+                            <img src="/api/placeholder/600/400" class="card-img-top project-img" alt="Projeto 2">
+                            <div class="project-overlay">
+                                <h5>Aplicativo de Análise de Vulnerabilidades</h5>
+                                <p class="mb-3">Ferramenta para identificação e gestão de vulnerabilidades em redes corporativas.</p>
+                                <a href="#" class="btn btn-sm btn-light">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="200">
+                        <div class="project-card card h-100">
+                            <img src="/api/placeholder/600/400" class="card-img-top project-img" alt="Projeto 3">
+                            <div class="project-overlay">
+                                <h5>Dashboard de Monitoramento</h5>
+                                <p class="mb-3">Painel de controle para monitoramento em tempo real de métricas de segurança.</p>
+                                <a href="#" class="btn btn-sm btn-light">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensagem:</label>
-                    <textarea id="message" name="message" class="form-control" required></textarea>
+                
+                <div class="text-center mt-4" data-aos="fade-up">
+                    <a href="#" class="btn btn-primary">Ver todos os projetos</a>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+            </div>
+        </section>
+
+        <!-- Formação -->
+        <section id="education" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-4 fw-bold">Formação Acadêmica</h2>
+                    <p class="lead">Minha jornada educacional</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="timeline" data-aos="fade-up">
+                            <div class="timeline-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">2022 - 2025</span>
+                                        <h4>Bacharelado em Engenharia de Software</h4>
+                                        <h6 class="text-muted">Anhanguera Educacional</h6>
+                                        <p>Foco em desenvolvimento de software, programação orientada a objetos, banco de dados e metodologias ágeis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">2025</span>
+                                        <h4>Certificação em Cibersegurança</h4>
+                                        <h6 class="text-muted">Cisco Networking Academy</h6>
+                                        <p>Especialização em segurança de redes, identificação de vulnerabilidades e implementação de medidas de proteção.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">2023</span>
+                                        <h4>Especialização em Desenvolvimento Web</h4>
+                                        <h6 class="text-muted">Digital Innovation One</h6>
+                                        <p>Aprofundamento em tecnologias front-end, back-end e experiência do usuário.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contador de estatísticas -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up">
+                        <div class="counter" data-target="15">
+                            <i class="fas fa-code fa-2x mb-3"></i>
+                            <h2 class="counter-value display-4 fw-bold">0</h2>
+                            <p>Projetos Completos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                        <div class="counter" data-target="3">
+                            <i class="fas fa-award fa-2x mb-3"></i>
+                            <h2 class="counter-value display-4 fw-bold">0</h2>
+                            <p>Anos de Experiência</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="counter" data-target="50">
+                            <i class="fas fa-coffee fa-2x mb-3"></i>
+                            <h2 class="counter-value display-4 fw-bold">0</h2>
+                            <p>Xícaras de Café</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="counter" data-target="8">
+                            <i class="fas fa-certificate fa-2x mb-3"></i>
+                            <h2 class="counter-value display-4 fw-bold">0</h2>
+                            <p>Certificações</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contact" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <h2 class="display-4 fw-bold mb-4">Vamos Conversar</h2>
+                        <p class="lead mb-5">Tem um projeto em mente ou quer conversar sobre tecnologia? Entre em contato!</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="mb-4">Informações de Contato</h3>
+                                
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Localização</h5>
+                                        <p class="mb-0 text-muted">São Paulo, Brasil</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Email</h5>
+                                        <p class="mb-0 text-muted">tercio1parente@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Telefone</h5>
+                                        <p class="mb-0 text-muted">(11) 95934-4743</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-links mt-4">
+                                    <a href="https://www.linkedin.com/in/tercioparente/" class="btn btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/Tercio01" class="btn btn-outline-primary me-2"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="btn btn-outline-primary"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-7" data-aos="fade-left">
+                        <div class="card">
+                            <div class="card-body">
+                                <form id="contact-form" class="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="name" class="form-label">Nome</label>
+                                            <input type="text" id="name" name="name" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, informe seu nome.
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" id="email" name="email" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, informe um email válido.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Assunto</label>
+                                        <input type="text" id="subject" name="subject" class="form-control" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, informe o assunto.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="message" class="form-label">Mensagem</label>
+                                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Por favor, digite sua mensagem.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="text-end">
+                                        <button type="submit" id="submit-btn" class="btn btn-primary">
+                                            <span id="btn-text">Enviar Mensagem</span>
+                                            <span id="btn-loader" class="d-none">
+                                                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                Enviando...
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer class="bg-dark text-white text-center py-3 animate__animated animate__fadeInUp">
-        <p>&copy; 2025 Tercio Alves Parente</p>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="fw-bold mb-4">Tercio Alves Parente</h4>
+                    <p>Engenheiro de Software especializado em desenvolvimento seguro e soluções tecnológicas inovadoras.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5 class="mb-4">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Sobre</a></li>
+                        <li class="mb-2"><a href="#skills" class="text-white text-decoration-none">Habilidades</a></li>
+                        <li class="mb-2"><a href="#projects" class="text-white text-decoration-none">Projetos</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+                    <h5 class="mb-4">Contato</h5>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt me-2"></i> São Paulo, Brasil
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-envelope me-2"></i> tercio1parente@gmail.com
+                    </div>
+                    <div>
+                        <i class="fas fa-phone me-2"></i> (11) 95934-4743
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Inscreva-se para receber atualizações</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Seu email" aria-label="Email" aria-describedby="subscribe-btn">
+                            <button class="btn btn-primary" type="button" id="subscribe-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Tercio Alves Parente. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- Modal para CV -->
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cvModalLabel">Download CV</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Obrigado pelo interesse em meu currículo! Clique no botão abaixo para baixar.</p>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-download me-2"></i>Baixar CV (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de voltar ao topo -->
+    <a href="#" id="back-to-top" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Toast de sucesso -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong class="me-auto">Sucesso!</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Sua mensagem foi enviada com sucesso. Entrarei em contato em breve!
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Inicialização do AOS (Animate on Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Iniciando AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                mirror: false
+            });
+            
+            // Loader
+            window.addEventListener('load', function() {
+                const loaderWrapper = document.querySelector('.loader-wrapper');
+                loaderWrapper.style.opacity = '0';
+                setTimeout(function() {
+                    loaderWrapper.style.display = 'none';
+                }, 500);
+            });
+            
+            // Typed.js para texto animado
+            const typed = new Typed('#typed-text', {
+                strings: [
+                    'Engenheiro de Software',
+                    'Especialista em Cibersegurança',
+                    'Desenvolvedor Full Stack',
+                    'Entusiasta de Tecnologia'
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                loop: true
+            });
+            
+            // Inicialização do Particles.js
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            
+            // Navbar scroll
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+            
+            // Tema escuro/claro
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                // Salvar preferência de tema no localStorage
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+            
+            // Verificar tema salvo
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+            
+            // Validação de formulário
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        // Simular envio
+                        const btnText = document.getElementById('btn-text');
+                        const btnLoader = document.getElementById('btn-loader');
+                        
+                        btnText.classList.add('d-none');
+                        btnLoader.classList.remove('d-none');
+                        
+                        setTimeout(function() {
+                            btnText.classList.remove('d-none');
+                            btnLoader.classList.add('d-none');
+                            form.reset();
+                            
+                            // Mostrar toast de sucesso
+                            const successToast = new bootstrap.Toast(document.getElementById('successToast'));
+                            successToast.show();
+                        }, 2000);
+                    }
+                    
+                    form.classList.add('was-validated');
+                });
+            }
+            
+            // Cursor personalizado
+            const cursor = document.querySelector('.custom-cursor');
+            if (cursor) {
+                document.addEventListener('mousemove', function(e) {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                });
+                
+                // Efeito de escala em elementos clicáveis
+                const links = document.querySelectorAll('a, button, .btn, input, textarea, .navbar-toggler');
+                links.forEach(link => {
+                    link.addEventListener('mouseenter', function() {
+                        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                        cursor.style.backgroundColor = 'rgba(13, 110, 253, 0.2)';
+                    });
+                    
+                    link.addEventListener('mouseleave', function() {
+                        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                        cursor.style.backgroundColor = 'transparent';
+                    });
+                });
+            }
+            
+            // Animação de contadores
+            const counters = document.querySelectorAll('.counter-value');
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.closest('.counter').dataset.target);
+                        let count = 0;
+                        const updateCounter = () => {
+                            const increment = target / 50;
+                            if (count < target) {
+                                count += increment;
+                                counter.textContent = Math.ceil(count);
+                                setTimeout(updateCounter, 30);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+            
+            // Botão de voltar ao topo
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTopButton.style.display = 'flex';
+                        backToTopButton.style.opacity = '1';
+                    } else {
+                        backToTopButton.style.opacity = '0';
+                        setTimeout(() => {
+                            backToTopButton.style.display = 'none';
+                        }, 300);
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+
+    <style>
+        /* Estilos adicionais para elementos dinâmicos */
+        .back-to-top {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: none;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-3px);
+        }
+    </style>
 </body>
 </html>
