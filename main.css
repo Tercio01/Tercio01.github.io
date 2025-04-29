@@ -78,7 +78,7 @@ header nav .nav-link:hover {
     padding: 2rem;
     border-radius: var(--border-radius);
     background-color: var(--light-bg);
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 .125rem .25rem rgba(248, 247, 247, 0.075);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -123,7 +123,7 @@ header nav .nav-link:hover {
 
 .skill-badge:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(240, 237, 237, 0.2);
     background-color: var(--hover-color);
 }
 
