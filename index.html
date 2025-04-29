@@ -1,69 +1,104 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Tercio Alves Parente</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Tercio Alves Parente</title>
+    <meta name="description" content="Portfólio de Tercio Alves Parente, engenheiro de software em formação, com certificações em cibersegurança e redes.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-3">
-        <h1>Tercio Alves Parente</h1>
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link text-white" href="#about">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#projects">Projetos</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container my-4">
-        <section id="about">
-            <h2>Sobre</h2>
-            <img src="C:\Users\alvespar\OneDrive - Merck Sharp & Dohme LLC\Downloads\github_codigos\portfolio" class="img-thumbnail" alt="tercio.png" class="img-thumbnail mb-3" style="width: 150px;">
-            <p>Bem-vindo ao meu portfólio! Sou Tercio Alves Parente, desenvolvedor web.</p>
-        </section>
-        <section id="projects">
-            <h2>Projetos</h2>
-            <div class="project card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Projeto 1</h3>
-                    <p class="card-text">Descrição do projeto 1.</p>
-                </div>
-            </div>
-            <div class="project card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Projeto 2</h3>
-                    <p class="card-text">Descrição do projeto 2.</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contato</h2>
-            <form id="contact-form" class="mb-3">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensagem:</label>
-                    <textarea id="message" name="message" class="form-control" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </section>
-    </main>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Tercio Alves Parente</p>
-    </footer>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <img src="tercio.png" class="img-fluid" alt="...">
+    <header class="bg-dark text-white text-center py-3 animate__animated animate__fadeInDown">
+        <h1>Tercio Alves Parente</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="#about">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#skills">Habilidades</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#projects">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#education">Formação</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container my-4">
+        <section id="about" class="d-flex animate__animated animate__fadeInLeft">
+            <img src="tercio.png" alt="Foto de Tercio Alves Parente" class="img-thumbnail me-3" style="width: 150px;">
+            <div>
+                <h2>Sobre</h2>
+                <p>Bem-vindo ao meu portfólio! Sou Tercio Alves Parente, engenheiro de software em formação, com certificações em cibersegurança e redes.</p>
+            </div>
+        </section>
+        <section id="skills" class="animate__animated animate__fadeInRight">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li>Programação orientada a objetos (POO)</li>
+                <li>Pensamento estratégico</li>
+                <li>Scrum</li>
+                <li>XP Programming</li>
+                <li>Python</li>
+                <li>Front-end web</li>
+                <li>Modelagem de banco de dados relacional</li>
+                <li>Segurança: Princípios OWASP, Análise de Vulnerabilidades</li>
+                <li>Ferramentas: Git, Wireshark</li>
+            </ul>
+        </section>
+        <section id="projects" class="animate__animated animate__fadeInUp">
+            <h2>Projetos</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <img src="projeto1.jpg" class="card-img-top" alt="Imagem do Projeto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto 1</h5>
+                            <p class="card-text">Descrição do projeto 1.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <img src="caminho/para/imagem_projeto2.jpg" class="card-img-top" alt="Imagem do Projeto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto 2</h5>
+                            <p class="card-text">Descrição do projeto 2.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="animate__animated animate__fadeInUp">
+            <h2>Formação</h2>
+            <div class="education-item">
+                <h3>Anhanguera Educacional</h3>
+                <p>Bacharelado, Engenharia de Software (setembro de 2022 - agosto de 2025)</p>
+            </div>
+        </section>
+        <section id="contact" class="animate__animated animate__fadeInUp">
+            <h2>Contato</h2>
+            <form id="contact-form" class="mb-3">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem:</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-3 animate__animated animate__fadeInUp">
+        <p>&copy; 2025 Tercio Alves Parente</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
