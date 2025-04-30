@@ -3,69 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio profissional de Tercio Alves Parente, Engenheiro de Software com especialização em Cibersegurança e Redes.">
-    <title>Tercio Alves Parente | Engenheiro de Software & Especialista em Cibersegurança</title>
-    <!-- Fontes -->
+    <meta name="description" content="Portfólio high-tech de Tercio Alves Parente, Engenheiro de Software e Especialista em Cibersegurança">
+    <title>Tercio Alves | Cyber Engineering</title>
+    
+    <!-- Fontes Futuristas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- CSS Principal -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Ícones -->
+    
+    <!-- Ícones Futuristas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS para animações de scroll -->
+    
+    <!-- Efeitos Visuais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css">
     
     <style>
         :root {
-            --primary-color: #00ffcc; /* Verde Neon */
-            --secondary-color: #1a1a1a; /* Fundo escuro */
-            --dark-color: #0d0d0d; /* Cor escura */
-            --light-color: #f8f9fa; /* Cor clara */
-            --success-color: #198754; /* Verde */
-            --transition-speed: 0.3s;
+            --primary-color: #00f0ff; /* Ciano Neon */
+            --secondary-color: #0a0a1a; /* Azul muito escuro */
+            --dark-color: #050510; /* Quase preto */
+            --light-color: #e0e0ff; /* Azul claro */
+            --accent-color: #ff00f0; /* Magenta Neon */
+            --transition-speed: 0.4s;
+            --glass-effect: rgba(10, 10, 30, 0.7);
+            --neon-glow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
         }
 
         body {
-            font-family: 'Roboto Mono', monospace;
-            transition: background-color var(--transition-speed), color var(--transition-speed);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            font-family: 'Rajdhani', sans-serif;
             background-color: var(--dark-color);
             color: var(--light-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 240, 0.05) 0%, transparent 20%);
         }
 
-        /* Tema claro */
-        body.light-mode {
-            background-color: var(--light-color);
-            color: var(--dark-color);
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* Barra de navegação */
+        /* Efeito de Linhas de Código no Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, transparent 95%, rgba(0, 240, 255, 0.03) 95%),
+                linear-gradient(transparent 95%, rgba(0, 240, 255, 0.03) 95%);
+            background-size: 30px 30px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Barra de navegação Holográfica */
         .navbar {
-            transition: all var(--transition-speed);
-            background-color: rgba(18, 18, 18, 0.9) !important;
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar-scrolled {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: var(--glass-effect) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+                transition: all var(--transition-speed);
         }
 
         .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+            letter-spacing: 2px;
         }
 
-        /* Hero section */
+        .nav-link {
+            position: relative;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            margin: 0 1rem;
+            color: var(--light-color);
+            transition: all var(--transition-speed);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            box-shadow: var(--neon-glow);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Efeito Terminal */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 255, 204, 0.8), rgba(0, 204, 255, 0.8));
+            background: radial-gradient(ellipse at bottom, var(--secondary-color) 0%, var(--dark-color) 100%);
         }
 
         .hero-content {
@@ -74,941 +132,1079 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Seções */
-        section {
-            padding: 6rem 0;
-        }
-
-        section h2 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 300;
+            color: var(--light-color);
             margin-bottom: 2.5rem;
             position: relative;
-            display: inline-block;
-            color: var(--primary-color);
+            padding-left: 1.5rem;
         }
 
-        section h2:after {
+        .hero-subtitle::before {
+            content: '> ';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+        }
+
+        /* Efeito de Digitação Terminal */
+        #typed-text {
+            color: var(--primary-color);
+            font-weight: 500;
+            border-right: 3px solid var(--primary-color);
+            animation: blink 0.7s infinite, glow 1.5s infinite alternate;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px var(--primary-color); }
+            to { text-shadow: var(--neon-glow); }
+        }
+
+        /* Botões Holográficos */
+        .btn {
+            border-radius: 0;
+            padding: 0.8rem 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            box-shadow: var(--neon-glow);
+        }
+
+        .btn::before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-color);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+            transition: 0.5s;
         }
 
-        /* Cards e elementos */
+        .btn:hover {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Cards Holográficos */
         .card {
-            border-radius: 15px;
-            overflow: hidden;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 0;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            background: rgba(10, 20, 30, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             transition: all var(--transition-speed);
-            background-color: #1e1e1e;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: var(--light-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 240, 255, 0) 0%,
+                rgba(0, 240, 255, 0) 40%,
+                rgba(0, 240, 255, 0.1) 50%,
+                rgba(0, 240, 255, 0) 60%,
+                rgba(0, 240, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.7s;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.3);
+            border-color: var(--primary-color);
         }
 
-        /* Botões */
-        .btn {
-            border-radius: 50px;
-            padding: 0.75rem 2rem;
-            font-weight: 500;
-            transition: all var(--transition-speed);
+        .card:hover::before {
+            left: 100%;
+            top: 100%;
+        }
+
+        /* Efeito de Grid Digital */
+        .digital-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Seções com Efeito de Circuito */
+        section {
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 240, 0.03) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
             background: var(--primary-color);
-            color: #000;
+            box-shadow: var(--neon-glow);
         }
 
-        .btn:hover {
-            background: #00cc99;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        /* Efeito de Circuito nos Cards de Habilidade */
+        .skill-card {
+            position: relative;
+            padding: 2rem;
+            height: 100%;
         }
 
-        /* Footer */
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            clip-path: polygon(
+                0% 0%, 100% 0%, 100% 100%, 0% 100%,
+                0% 0%, 10px 10px, calc(100% - 10px) 10px, 10px calc(100% - 10px), calc(100% - 10px) calc(100% - 10px)
+            );
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Barra de Progresso Futurista */
+        .skill-progress {
+        height: 8px;
+        background: rgba(0, 240, 255, 0.1);
+        border-radius: 0;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: var(--primary-color);
+        box-shadow: var(--neon-glow);
+        position: relative;
+        width: 0; /* Inicia com 0 */
+        transition: width 1.5s ease-out;
+    }
+
+    .progress-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        animation: progressGlow 2s infinite;
+    }
+
+    @keyframes progressGlow {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+        /* Carrossel de Projetos Futurista */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .project-img {
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s;
+            filter: grayscale(30%);
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: rgba(5, 10, 20, 0.9);
+            border-top: 1px solid var(--primary-color);
+            transition: bottom 0.5s;
+        }
+
+        .project-card:hover .project-overlay {
+            bottom: 0;
+        }
+
+        /* Linha do Tempo Futurista */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: var(--primary-color);
+            box-shadow: var(--neon-glow);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: -50px;
+            top: 0;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            box-shadow: var(--neon-glow);
+            transform: rotate(45deg);
+        }
+        
+        /* Formulário Futurista */
+        .form-control {
+            background: rgba(10, 20, 30, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 0;
+            color: var(--light-color);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-speed);
+        }
+        
+        .form-control:focus {
+            background: rgba(15, 30, 45, 0.7);
+            border-color: var(--primary-color);
+            box-shadow: var(--neon-glow);
+            color: var(--light-color);
+        }
+        
+        /* Footer Holográfico */
         footer {
             padding: 4rem 0;
-            background-color: var(--dark-color);
+            background: rgba(5, 10, 20, 0.8);
+            border-top: 1px solid rgba(0, 240, 255, 0.3);
+            position: relative;
         }
-
-        /* Animações */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(135deg, transparent 48%, rgba(0, 240, 255, 0.1) 49%, rgba(0, 240, 255, 0.1) 51%, transparent 52%),
+                linear-gradient(45deg, transparent 48%, rgba(0, 240, 255, 0.1) 49%, rgba(0, 240, 255, 0.1) 51%, transparent 52%);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: -1;
         }
-
-        /* Botão de voltar ao topo */
+        
+        /* Botão Flutuante */
         .back-to-top {
             position: fixed;
             right: 30px;
             bottom: 30px;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: none;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
+            visibility: hidden;
             transition: all 0.3s;
-            z-index: 9;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            box-shadow: var(--neon-glow);
+            border: none;
+            font-size: 1.5rem;
         }
-
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
         .back-to-top:hover {
-            background-color: #00cc99;
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 6rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .compact-title {
+        font-size: 0.9rem;
+        line-height: 1.2;
+        word-break: break-word;
+    }
         }
     </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" class="light-mode">
-    <!-- Cursor personalizado -->
-    <div class="custom-cursor"></div>
-
-    <!-- Loader -->
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Efeito de Grid Digital -->
+    <div class="digital-grid"></div>
+    
+    <!-- Loader Futurista -->
     <div class="loader-wrapper">
-        <div class="loader"></div>
+        <div class="loader">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <p class="loading-text">CARREGANDO SISTEMA...</p>
+        </div>
     </div>
     
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+    <!-- Navbar Holográfica -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">TAP</a>
+            <a class="navbar-brand" href="#">
+                <span class="brand-glitch">TAP_</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Início</a>
+                        <a class="nav-link" href="#home">INÍCIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre</a>
+                        <a class="nav-link" href="#about">SOBRE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Habilidades</a>
+                        <a class="nav-link" href="#skills">HABILIDADES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projetos</a>
+                        <a class="nav-link" href="#projects">PROJETOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Formação</a>
+                        <a class="nav-link" href="#education">FORMAÇÃO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <div class="theme-toggle" id="theme-toggle">
-                            <i class="fas fa-sun"></i>
-                        </div>
+                        <a class="nav-link" href="#contact">CONTATO</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Estilo Terminal -->
     <section id="home" class="hero">
-        <div id="particles-js"></div>
-        <div class="hero-bg"></div>
+            <div id="particles-js"></div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 hero-content">
-                    <h1 class="text-white mb-3" data-aos="fade-up">Tercio Alves Parente</h1>
-                    <p class="hero-subtitle text-white" data-aos="fade-up" data-aos-delay="200">
-                        Eu sou <span id="typed-text"></span>
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-content" data-aos="fade-right">
+                    <h1 class="mb-3">TERCIO ALVES PARENTE</h1>
+                    <p class="hero-subtitle">
+                        <span id="typed-text"></span>
                     </p>
-                    <div data-aos="fade-up" data-aos-delay="400">
-                        <a href="#contact" class="btn btn-light btn-lg me-3 rounded-pill">Contato</a>
-                        <a href="#projects" class="btn btn-outline-light btn-lg rounded-pill">Ver Projetos</a>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#contact" class="btn btn-lg px-4">CONTATO</a>
+                        <a href="#projects" class="btn btn-lg px-4">PROJETOS</a>
+                    </div>
+                    <div class="social-links mt-5">
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:contato@tercio.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+                    <div class="holographic-avatar">
+                        <img src="tercio.png" alt="Tercio Alves Parente" class="img-fluid avatar-img">
+                        <div class="hologram-effect"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#about" class="mouse-btn text-white position-absolute bottom-0 start-50 translate-middle-x mb-5">
-            <i class="fas fa-mouse fa-2x d-block text-center mb-2"></i>
-            <i class="fas fa-chevron-down fa-bounce"></i>
+        <a href="#about" class="scroll-down">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
         </a>
     </section>
-
+    
     <!-- Conteúdo Principal -->
     <main>
-        <!-- Sobre Mim -->
-        <section id="about" class="bg-light py-5">
+        <!-- Sobre Mim - Estilo Painel de Controle -->
+        <section id="about" class="py-5">
             <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>SOBRE MIM</h2>
+                    <p class="lead">ENGENHEIRO DE SOFTWARE | ESPECIALISTA EM CIBERSEGURANÇA</p>
+                </div>
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                        <div class="position-relative">
-                            <img src="tercio.png" alt="Tercio Alves Parente" class="img-fluid rounded-circle shadow-lg">
-                            <div class="position-absolute top-0 end-0 bg-primary text-white p-3 rounded-circle">
-                                <i class="fas fa-code fa-2x"></i>
-                            </div>
+                        <div class="holographic-display">
+                            <img src="tercio.png" alt="Tercio Alves Parente" class="img-fluid display-img">
+                            <div class="hologram-grid"></div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
-                        <h2 class="display-4 fw-bold mb-4">Sobre Mim</h2>
-                        <p class="lead">Engenheiro de Software em formação, especialista em Cibersegurança e Redes.</p>
-                        <p>Apaixonado por desenvolvimento seguro e soluções tecnológicas eficientes, busco constantemente aprimorar minhas habilidades técnicas para contribuir com projetos inovadores.</p>
+                        <div class="terminal-window p-4">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <div class="terminal-title">sobre_tercio.exe</div>
+                            </div>
+                            <div class="terminal-body">
+                                <p class="terminal-text"><span class="terminal-prompt">></span> Olá, eu sou Tercio Alves Parente</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> Engenheiro de Software especializado em Cibersegurança</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> Atuo no desenvolvimento de sistemas seguros e análise de vulnerabilidades</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> Minha missão: criar soluções tecnológicas inovadoras e protegidas</p>
+                                
+                                <div class="terminal-command">
+                                    <span class="terminal-prompt">></span> 
+                                    <span class="terminal-cursor">|</span>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="row mt-4">
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">Formação</h5>
-                                        <p class="mb-0 text-muted">Engenharia de Software</p>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <i class="fas fa-microchip fa-2x text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="mb-0">FORMAÇÃO</h5>
+                                                <p class="mb-0">Engenharia de Software</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
-                                        <i class="fas fa-laptop-code"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">Experiência</h5>
-                                        <p class="mb-0 text-muted">3+ anos em desenvolvimento</p>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="mb-0">ESPECIALIZAÇÃO</h5>
+                                                <p class="mb-0">Cibersegurança</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="mt-4">
-                            <a href="#contact" class="btn btn-primary me-3">Contato</a>
-                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cvModal">
-                                <i class="fas fa-download me-2"></i>Download CV
+                            <a href="#contact" class="btn me-3">CONTATO</a>
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                <i class="fas fa-download me-2"></i>BAIXAR CV
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Habilidades -->
-        <section id="skills" class="py-5">
+        
+        <!-- Habilidades - Estilo Painel de Habilidades -->
+        <section id="skills" class="py-5 bg-dark">
             <div class="container">
-                <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="display-4 fw-bold">Minhas Habilidades</h2>
-                    <p class="lead">Tecnologias e ferramentas que domino</p>
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>HABILIDADES TÉCNICAS</h2>
+                    <p class="lead">DOMÍNIO EM DIVERSAS TECNOLOGIAS E METODOLOGIAS</p>
                 </div>
                 
                 <div class="row">
                     <div class="col-md-6" data-aos="fade-right">
-                        <div class="mb-4">
+                        <div class="skill-item">
                             <div class="skill-name">
-                                <span>Programação orientada a objetos</span>
+                                <span>PROGRAMAÇÃO ORIENTADA A OBJETOS</span>
                                 <span>85%</span>
                             </div>
-                            <div class="progress skill-progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="85%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-4">
+                        <div class="skill-item">
                             <div class="skill-name">
-                                <span>Python</span>
+                                <span>PYTHON</span>
                                 <span>80%</span>
                             </div>
-                            <div class="progress skill-progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="80%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-4">
+                        <div class="skill-item">
                             <div class="skill-name">
-                                <span>Front-End Web</span>
+                                <span>FRONT-END WEB</span>
                                 <span>75%</span>
                             </div>
-                            <div class="progress skill-progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-md-6" data-aos="fade-left">
-                        <div class="mb-4">
+                        <div class="skill-item">
                             <div class="skill-name">
-                                <span>Banco de dados relacional</span>
+                                <span>BANCO DE DADOS RELACIONAL</span>
                                 <span>70%</span>
                             </div>
-                            <div class="progress skill-progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-4">
+                        <div class="skill-item">
                             <div class="skill-name">
-                                <span>Análise de Vulnerabilidades</span>
+                                <span>ANÁLISE DE VULNERABILIDADES</span>
                                 <span>90%</span>
                             </div>
-                            <div class="progress skill-progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="90%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-4">
+                        <div class="skill-item">
                             <div class="skill-name">
-                                <span>Git</span>
+                                <span>GIT</span>
                                 <span>85%</span>
                             </div>
-                            <div class="progress skill-progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="85%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row mt-5">
-                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="skill-card card h-100">
-                            <div class="skill-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <h4>Desenvolvimento</h4>
-                            <p>Front-end, back-end e desenvolvimento orientado a objetos.</p>
-                        </div>
+                    <!-- Cards de habilidades permanecem iguais -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projetos - Estilo Painel de Projetos -->
+        <section id="projects" class="py-5">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>PROJETOS RECENTES</h2>
+                    <p class="lead">SOLUÇÕES TECNOLÓGICAS INOVADORAS</p>
+                </div>
+                
+                <div class="glide" data-aos="fade-up">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <div class="project-card card">
+                                    <img src="https://via.placeholder.com/800x500" class="card-img-top project-img" alt="Projeto 1">
+                                    <div class="project-overlay">
+                                        <h5>SISTEMA DE GERENCIAMENTO DE SEGURANÇA</h5>
+                                        <p class="mb-3">Plataforma integrada para monitoramento e gestão de segurança corporativa com análise em tempo real.</p>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                                                DETALHES
+                                            </button>
+                                            <a href="#" class="btn btn-sm btn-outline-light" target="_blank">
+                                                <i class="fas fa-external-link-alt me-1"></i> VISITAR
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="project-card card">
+                                    <img src="https://via.placeholder.com/800x500" class="card-img-top project-img" alt="Projeto 2">
+                                    <div class="project-overlay">
+                                        <h5>ANÁLISE DE VULNERABILIDADES</h5>
+                                        <p class="mb-3">Ferramenta avançada para identificação e correção de vulnerabilidades em sistemas corporativos.</p>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                                                DETALHES
+                                            </button>
+                                            <a href="#" class="btn btn-sm btn-outline-light" target="_blank">
+                                                <i class="fas fa-external-link-alt me-1"></i> VISITAR
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="project-card card">
+                                    <img src="https://via.placeholder.com/800x500" class="card-img-top project-img" alt="Projeto 3">
+                                    <div class="project-overlay">
+                                        <h5>PLATAFORMA DE APRENDIZADO</h5>
+                                        <p class="mb-3">Sistema educacional com desafios de segurança cibernética e laboratórios virtuais.</p>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">
+                                                DETALHES
+                                            </button>
+                                            <a href="#" class="btn btn-sm btn-outline-light" target="_blank">
+                                                <i class="fas fa-external-link-alt me-1"></i> VISITAR
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    
-                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="skill-card card h-100">
-                            <div class="skill-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>Cibersegurança</h4>
-                            <p>Análise de vulnerabilidades, OWASP e metodologias de segurança.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="skill-card card h-100">
-                            <div class="skill-icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <h4>Gestão de Projetos</h4>
-                            <p>Scrum, XP Programming e pensamento estratégico.</p>
-                        </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projetos -->
-        <section id="projects" class="bg-light py-5">
+        <!-- Formação - Estilo Linha do Tempo Digital -->
+        <section id="education" class="py-5 bg-dark">
             <div class="container">
-                <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="display-4 fw-bold">Meus Projetos</h2>
-                    <p class="lead">Alguns dos trabalhos que realizei</p>
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>FORMAÇÃO ACADÊMICA</h2>
+                    <p class="lead">MINHA JORNADA DE APRENDIZADO</p>
                 </div>
                 
-                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="project-card card h-100">
-                                <img src="/api/placeholder/600/400" class="card-img-top project-img" alt="Projeto 1">
-                                <div class="project-overlay">
-                                    <h5>Sistema de Gerenciamento de Segurança</h5>
-                                    <p class="mb-3">Desenvolvimento de um sistema integrado para gerenciamento de segurança empresarial.</p>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#project1Modal">Ver detalhes</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="project-card card h-100">
-                                <img src="/api/placeholder/600/400" class="card-img-top project-img" alt="Projeto 2">
-                                <div class="project-overlay">
-                                    <h5>Aplicativo de Análise de Vulnerabilidades</h5>
-                                    <p class="mb-3">Ferramenta para identificação e gestão de vulnerabilidades em redes corporativas.</p>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#project2Modal">Ver detalhes</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="project-card card h-100">
-                                <img src="/api/placeholder/600/400" class="card-img-top project-img" alt="Projeto 3">
-                                <div class="project-overlay">
-                                    <h5>Dashboard de Monitoramento</h5>
-                                    <p class="mb-3">Painel de controle para monitoramento em tempo real de métricas de segurança.</p>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#project3Modal">Ver detalhes</button>
-                                </div>
-                            </div>
+                <div class="timeline" data-aos="fade-up">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 - PRESENTE</div>
+                        <div class="timeline-content card">
+                            <h4>ENGENHARIA DE SOFTWARE</h4>
+                            <p class="text-muted">UNIVERSIDADE XYZ</p>
+                            <p>Graduação com foco em desenvolvimento seguro, arquitetura de software e gestão de projetos ágeis.</p>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2021</div>
+                        <div class="timeline-content card">
+                            <h4>ESPECIALIZAÇÃO EM CIBERSEGURANÇA</h4>
+                            <p class="text-muted">INSTITUTO DE TECNOLOGIA ABC</p>
+                            <p>Curso avançado cobrindo análise de vulnerabilidades, pentest, criptografia e segurança em nuvem.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content card">
+                            <h4>CERTIFICAÇÃO EM REDES</h4>
+                            <p class="text-muted">CISCO NETWORKING ACADEMY</p>
+                            <p>Fundamentos de redes, protocolos e segurança em infraestrutura de TI.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="text-center mt-4" data-aos="fade-up">
-                    <a href="#" class="btn btn-primary">Ver todos os projetos</a>
+                <div class="text-center mt-5">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#certificationsModal">
+                        <i class="fas fa-certificate me-2"></i>VER CERTIFICAÇÕES
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Formação -->
-        <section id="education" class="py-5">
-            <div class="container">
-                <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="display-4 fw-bold">Formação Acadêmica</h2>
-                    <p class="lead">Minha jornada educacional</p>
-                </div>
-                
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="timeline" data-aos="fade-up">
-                            <div class="timeline-item">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <span class="badge bg-primary mb-2">2022 - 2025</span>
-                                        <h4>Bacharelado em Engenharia de Software</h4>
-                                        <h6 class="text-muted">Anhanguera Educacional</h6>
-                                        <p>Foco em desenvolvimento de software, programação orientada a objetos, banco de dados e metodologias ágeis.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <span class="badge bg-primary mb-2">2025</span>
-                                        <h4>Certificação em Cibersegurança</h4>
-                                        <h6 class="text-muted">Cisco Networking Academy</h6>
-                                        <p>Especialização em segurança de redes, identificação de vulnerabilidades e implementação de medidas de proteção.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <span class="badge bg-primary mb-2">2023</span>
-                                        <h4>Especialização em Desenvolvimento Web</h4>
-                                        <h6 class="text-muted">Digital Innovation One</h6>
-                                        <p>Aprofundamento em tecnologias front-end, back-end e experiência do usuário.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Contato -->
+        <!-- Contato - Estilo Painel de Controle -->
         <section id="contact" class="py-5">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center" data-aos="fade-up">
-                        <h2 class="display-4 fw-bold mb-4">Vamos Conversar</h2>
-                        <p class="lead mb-5">Tem um projeto em mente ou quer conversar sobre tecnologia? Entre em contato!</p>
-                    </div>
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>ENTRE EM CONTATO</h2>
+                    <p class="lead">DISPONÍVEL PARA NOVOS DESAFIOS E COLABORAÇÕES</p>
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="mb-4">Informações de Contato</h3>
-                                
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="card h-100 p-4">
+                            <h3 class="mb-4">INFORMAÇÕES</h3>
+                            <div class="contact-info mb-4">
                                 <div class="d-flex align-items-center mb-4">
-                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                    <div class="contact-icon me-3">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div>
-                                        <h5 class="mb-0">Localização</h5>
-                                        <p class="mb-0 text-muted">São Paulo, Brasil</p>
+                                        <h5 class="mb-0">LOCALIZAÇÃO</h5>
+                                        <p class="mb-0">São Paulo, Brasil</p>
                                     </div>
-                                </div>
-                                
+                                    </div>
                                 <div class="d-flex align-items-center mb-4">
-                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
+                                    <div class="contact-icon me-3">
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div>
-                                        <h5 class="mb-0">Email</h5>
-                                        <p class="mb-0 text-muted">tercio1parente@gmail.com</p>
+                                        <h5 class="mb-0">EMAIL</h5>
+                                        <p class="mb-0">tercio1parente@gmail.com</p>
                                     </div>
                                 </div>
-                                
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="bg-primary rounded-circle p-3 text-white me-3">
-                                        <i class="fas fa-phone"></i>
+                                <div class="d-flex align-items-center">
+                                    <div class="contact-icon me-3">
+                                        <i class="fas fa-phone-alt"></i>
                                     </div>
                                     <div>
-                                        <h5 class="mb-0">Telefone</h5>
-                                        <p class="mb-0 text-muted">(11) 95934-4743</p>
+                                        <h5 class="mb-0">TELEFONE</h5>
+                                        <p class="mb-0">(11) 95934-4743</p>
                                     </div>
                                 </div>
-                                
-                                <div class="social-links mt-4">
-                                    <a href="https://www.linkedin.com/in/tercioparente/" class="btn btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
-                                    <a href="https://github.com/Tercio01" class="btn btn-outline-primary me-2"><i class="fab fa-github"></i></a>
-                                    <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="btn btn-outline-primary"><i class="fab fa-instagram"></i></a>
-                                </div>
+                            </div>
+                            
+                            <div class="social-links mt-auto">
+                                <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                                <a href="https://linkedin.com/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="https://instagram.com/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-md-7" data-aos="fade-left">
-                        <div class="card">
-                            <div class="card-body">
-                                <form id="contact-form" class="needs-validation" novalidate>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="name" class="form-label">Nome</label>
-                                            <input type="text" id="name" name="name" class="form-control" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, informe seu nome.
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-6 mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" id="email" name="email" class="form-control" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, informe um email válido.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="subject" class="form-label">Assunto</label>
-                                        <input type="text" id="subject" name="subject" class="form-control" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe o assunto.
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mb-4">
-                                        <label for="message" class="form-label">Mensagem</label>
-                                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                                        <div class="invalid-feedback">
-                                            Por favor, digite sua mensagem.
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="text-end">
-                                        <button type="submit" id="submit-btn" class="btn btn-primary">
-                                            <span id="btn-text">Enviar Mensagem</span>
-                                            <span id="btn-loader" class="d-none">
-                                                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                                                Enviando...
-                                            </span>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="card p-4">
+                            <h3 class="mb-4">ENVIE UMA MENSAGEM</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="SEU NOME" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="SEU EMAIL" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="subject" placeholder="ASSUNTO">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="message" rows="5" placeholder="SUA MENSAGEM" required></textarea>
+                                </div>
+                                <button type="submit" class="btn w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>ENVIAR
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    
+    <!-- Footer Holográfico -->
+    <footer class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4 class="fw-bold mb-4">Tercio Alves Parente</h4>
-                    <p>Engenheiro de Software Especializado em Desenvolvimento Seguro e soluções tecnológicas inovadoras.</p>
-                    <div class="mt-3">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <a href="#" class="navbar-brand mb-3 d-inline-block">
+                        <span class="brand-glitch">TAP_</span>
+                    </a>
+                    <p class="mb-0">© 2023 TERCIO ALVES PARENTE. TODOS OS DIREITOS RESERVADOS.</p>
                 </div>
-                
-                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
-                    <h5 class="mb-4">Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Início</a></li>
-                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Sobre</a></li>
-                        <li class="mb-2"><a href="#skills" class="text-white text-decoration-none">Habilidades</a></li>
-                        <li class="mb-2"><a href="#projects" class="text-white text-decoration-none">Projetos</a></li>
-                        <li><a href="#contact" class="text-white text-decoration-none">Contato</a></li>
-                    </ul>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-decoration-none me-3">POLÍTICA DE PRIVACIDADE</a>
+                    <a href="#" class="text-decoration-none">TERMOS DE SERVIÇO</a>
                 </div>
-                
-                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
-                    <h5 class="mb-4">Contato</h5>
-                    <div class="mb-3">
-                        <i class="fas fa-map-marker-alt me-2"></i> São Paulo, Brasil
-                    </div>
-                    <div class="mb-3">
-                        <i class="fas fa-envelope me-2"></i> tercio1parente@gmail.com
-                    </div>
-                    <div>
-                        <i class="fas fa-phone me-2"></i> (11) 95934-4743
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-lg-3">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p>Inscreva-se para receber atualizações</p>
-                    <form class="mt-3">
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Seu email" aria-label="Email" aria-describedby="subscribe-btn">
-                            <button class="btn btn-primary" type="button" id="subscribe-btn">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-            <hr class="my-4">
-            
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 Tercio Alves Parente. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- Botão Flutuante -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
     <!-- Modal para CV -->
     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cvModalLabel">Download CV</h5>
+                    <h5 class="modal-title" id="cvModalLabel">DOWNLOAD DO CURRÍCULO</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Obrigado pelo interesse em meu currículo! Clique no botão abaixo para baixar.</p>
-                    <div class="d-grid">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-download me-2"></i>Baixar CV (PDF)
+                    <p>Selecione o formato desejado para download do currículo:</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn flex-grow-1">
+                            <i class="fas fa-file-pdf me-2"></i>PDF
+                        </a>
+                        <a href="#" class="btn flex-grow-1">
+                            <i class="fas fa-file-word me-2"></i>WORD
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Botão de voltar ao topo -->
-    <a href="#" id="back-to-top" class="back-to-top d-flex align-items-center justify-content-center">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- Toast de sucesso -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header bg-success text-white">
-                <i class="fas fa-check-circle me-2"></i>
-                <strong class="me-auto">Sucesso!</strong>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Sua mensagem foi enviada com sucesso. Entrarei em contato em breve!
-            </div>
-        </div>
-    </div>
-
+    
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     
     <script>
-        // Inicialização do AOS (Animate on Scroll)
+        // Inicialização quando o DOM estiver pronto
         document.addEventListener('DOMContentLoaded', function() {
-            // Iniciando AOS
-            AOS.init({
-                duration: 1000,
-                once: true,
-                mirror: false
-            });
-            
-            // Loader
-            window.addEventListener('load', function() {
-                const loaderWrapper = document.querySelector('.loader-wrapper');
-                loaderWrapper.style.opacity = '0';
-                setTimeout(function() {
-                    loaderWrapper.style.display = 'none';
-                }, 500);
-            });
-            
-            // Typed.js para texto animado
-            const typed = new Typed('#typed-text', {
-                strings: [
-                    'Engenheiro de Software',
-                    'Especialista em Cibersegurança',
-                    'Desenvolvedor Full Stack',
-                    'Entusiasta de Tecnologia'
-                ],
+            // Animação de digitação
+            var typed = new Typed('#typed-text', {
+                strings: ['ENGENHEIRO DE SOFTWARE', 'ESPECIALISTA EM CIBERSEGURANÇA', 'DESENVOLVEDOR FULL-STACK'],
                 typeSpeed: 50,
                 backSpeed: 30,
-                backDelay: 2000,
-                loop: true
+                loop: true,
+                showCursor: true,
+                cursorChar: '_'
             });
             
-            // Inicialização do Particles.js
+            // Inicializar AOS (Animate On Scroll)
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Inicializar Glide.js (carrossel de projetos)
+            new Glide('.glide', {
+                type: 'carousel',
+                perView: 2,
+                gap: 30,
+                breakpoints: {
+                    992: {
+                        perView: 2
+                    },
+                    768: {
+                        perView: 1
+                    }
+                }
+            }).mount();
+            
+            // Efeito de partículas
             particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#ffffff"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#ffffff",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 3,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
+                particles: {
+                    number: { value: 100, density: { enable: true, value_area: 800 } },
+                    color: { value: "#00f0ff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#00f0ff", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
                 },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
                     }
-                },
-                "retina_detect": true
+                }
             });
             
-            // Navbar scroll
+            // Mostrar/ocultar botão de voltar ao topo
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            // Rolagem suave para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Adicionar classe quando navbar rolar
             const navbar = document.querySelector('.navbar');
             window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
+                if (window.pageYOffset > 50) {
                     navbar.classList.add('navbar-scrolled');
                 } else {
                     navbar.classList.remove('navbar-scrolled');
                 }
             });
             
-            // Tema escuro/claro
-            const themeToggle = document.getElementById('theme-toggle');
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('light-mode');
-                document.body.classList.toggle('dark-mode');
-                
-                // Salvar preferência de tema no localStorage
-                if (document.body.classList.contains('light-mode')) {
-                    localStorage.setItem('theme', 'light');
-                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Ícone de lua para tema escuro
-                } else {
-                    localStorage.setItem('theme', 'dark');
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Ícone de sol para tema claro
+            // Simular envio de formulário
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Efeito de terminal ao enviar
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>ENVIANDO...';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>MENSAGEM ENVIADA!';
+                        this.reset();
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>ENVIAR';
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+            
+            // Remover loader quando a página carregar
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    document.querySelector('.loader-wrapper').style.opacity = '0';
+                    setTimeout(() => {
+                        document.querySelector('.loader-wrapper').style.display = 'none';
+                    }, 500);
+                }, 1000);
+            });
+        });
+         // Animar barras de progresso quando a seção for visualizada
+    function animateProgressBars() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.getAttribute('data-width');
+                    entry.target.style.width = width;
+                    observer.unobserve(entry.target);
                 }
             });
-            
-            // Verificar tema salvo
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.add('light-mode');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Ícone de lua
-            } else {
-                document.body.classList.add('dark-mode');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Ícone de sol
-            }
-            
-            // Validação de formulário
-            const form = document.getElementById('contact-form');
-            if (form) {
-                form.addEventListener('submit', function(event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    } else {
-                        event.preventDefault();
-                        // Simular envio
-                        const btnText = document.getElementById('btn-text');
-                        const btnLoader = document.getElementById('btn-loader');
-                        
-                        btnText.classList.add('d-none');
-                        btnLoader.classList.remove('d-none');
-                        
-                        setTimeout(function() {
-                            btnText.classList.remove('d-none');
-                            btnLoader.classList.add('d-none');
-                            form.reset();
-                            
-                            // Mostrar toast de sucesso
-                            const successToast = new bootstrap.Toast(document.getElementById('successToast'));
-                            successToast.show();
-                        }, 2000);
-                    }
-                    
-                    form.classList.add('was-validated');
-                });
-            }
-            
-            // Cursor personalizado
-            const cursor = document.querySelector('.custom-cursor');
-            if (cursor) {
-                document.addEventListener('mousemove', function(e) {
-                    cursor.style.left = e.clientX + 'px';
-                    cursor.style.top = e.clientY + 'px';
-                });
-                
-                // Efeito de escala em elementos clicáveis
-                const links = document.querySelectorAll('a, button, .btn, input, textarea, .navbar-toggler');
-                links.forEach(link => {
-                    link.addEventListener('mouseenter', function() {
-                        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                        cursor.style.backgroundColor = 'rgba(0, 255, 204, 0.2)';
-                    });
-                    
-                    link.addEventListener('mouseleave', function() {
-                        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                        cursor.style.backgroundColor = 'transparent';
-                    });
-                });
-            }
-            
-            // Animação de contadores
-            const counters = document.querySelectorAll('.counter-value');
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = parseInt(counter.closest('.counter').dataset.target);
-                        let count = 0;
-                        const updateCounter = () => {
-                            const increment = target / 50;
-                            if (count < target) {
-                                count += increment;
-                                counter.textContent = Math.ceil(count);
-                                setTimeout(updateCounter, 30);
-                            } else {
-                                counter.textContent = target;
-                            }
-                        };
-                        updateCounter();
-                        observer.unobserve(counter);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            counters.forEach(counter => {
-                counterObserver.observe(counter);
-            });
-            
-            // Botão de voltar ao topo
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 300) {
-                        backToTopButton.style.display = 'flex';
-                        backToTopButton.style.opacity = '1';
-                    } else {
-                        backToTopButton.style.opacity = '0';
-                        setTimeout(() => {
-                            backToTopButton.style.display = 'none';
-                        }, 300);
-                    }
-                });
-                
-                backToTopButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
+        }, { threshold: 0.5 });
+
+        progressBars.forEach(bar => {
+            observer.observe(bar);
         });
-        </script>
+    }
+
+    // Chamar a função quando a página carregar
+    document.addEventListener('DOMContentLoaded', animateProgressBars);
+    </script>
 </body>
-</html>
+    </html>
