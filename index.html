@@ -28,6 +28,7 @@
             --dark-color: #050510; /* Quase preto */
             --light-color: #e0e0ff; /* Azul claro */
             --accent-color: #ff00f0; /* Magenta Neon */
+            --matrix-color: #0f0; /* Verde Matrix */
             --transition-speed: 0.4s;
             --glass-effect: rgba(10, 10, 30, 0.7);
             --neon-glow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
@@ -39,33 +40,18 @@
             background-color: var(--dark-color);
             color: var(--light-color);
             line-height: 1.7;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(255, 0, 240, 0.05) 0%, transparent 20%);
+                overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Efeito de Linhas de Código no Background */
-        body::before {
-            content: "";
+        /* Efeito Matrix Intenso */
+        .matrix-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(90deg, transparent 95%, rgba(0, 240, 255, 0.03) 95%),
-                linear-gradient(transparent 95%, rgba(0, 240, 255, 0.03) 95%);
-            background-size: 30px 30px;
+                height: 100%;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.8;
         }
 
         /* Barra de navegação Holográfica */
@@ -134,14 +120,14 @@
             width: 100%;
         }
 
-        /* Hero Section - Efeito Terminal */
+        /* Hero Section - Estilo Terminal */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(ellipse at bottom, var(--secondary-color) 0%, var(--dark-color) 100%);
+            background: radial-gradient(ellipse at bottom, var(--secondary-color) 0%, transparent 100%);
         }
 
         .hero-content {
@@ -304,42 +290,14 @@
             left: 100%;
             top: 100%;
         }
-
-        /* Efeito de Grid Digital */
-        .digital-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
+        
         /* Seções com Efeito de Circuito */
         section {
             padding: 8rem 0;
             position: relative;
             overflow: hidden;
         }
-
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.03) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(255, 0, 240, 0.03) 0%, transparent 20%);
-            z-index: -1;
-        }
-
+        
         .section-title {
             position: relative;
             margin-bottom: 5rem;
@@ -407,7 +365,7 @@
             background: var(--primary-color);
             box-shadow: var(--neon-glow);
             position: relative;
-            width: 0; /* Inicia com 0 */
+            width: 0;
             transition: width 1.5s ease-out;
         }
 
@@ -552,22 +510,7 @@
             border-top: 1px solid rgba(0, 240, 255, 0.3);
             position: relative;
         }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(135deg, transparent 48%, rgba(0, 240, 255, 0.1) 49%, rgba(0, 240, 255, 0.1) 51%, transparent 52%),
-                linear-gradient(45deg, transparent 48%, rgba(0, 240, 255, 0.1) 49%, rgba(0, 240, 255, 0.1) 51%, transparent 52%);
-            background-size: 30px 30px;
-            opacity: 0.3;
-            z-index: -1;
-        }
-        
+            
         /* Botão Flutuante */
         .back-to-top {
             position: fixed;
@@ -676,33 +619,7 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
-        /* Holographic Avatar */
-        .holographic-avatar {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            margin: 0 auto;
-        }
-        
-        .hologram-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle, transparent 30%, var(--primary-color) 150%);
-            opacity: 0.3;
-            animation: pulse 4s infinite alternate;
-            z-index: 1;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.2; transform: scale(0.95); }
-            100% { opacity: 0.4; transform: scale(1.05); }
-        }
-
+            
         /* Terminal Window */
         .terminal-window {
             background: rgba(5, 10, 20, 0.8);
@@ -849,6 +766,16 @@
             100% { opacity: 0; transform: rotate(45deg) translateY(20px); }
         }
 
+        /* 3D Card Effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+        }
+
         /* Responsividade */
         @media (max-width: 992px) {
             .hero h1 {
@@ -863,7 +790,7 @@
                 padding: 6rem 0;
             }
             
-            .avatar-container, .holographic-avatar {
+            .avatar-container {
                 width: 250px;
                 height: 250px;
             }
@@ -886,147 +813,17 @@
                 font-size: 2rem;
             }
             
-            .avatar-container, .holographic-avatar {
+            .avatar-container {
                 width: 200px;
                 height: 200px;
-            }
-            
-            .compact-title {
-                font-size: 0.9rem;
-                line-height: 1.2;
-                word-break: break-word;
-            }
-        }
-
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-        }
-
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--secondary-color);
-            border: 1px solid var(--primary-color);
-            transition: .4s;
-            box-shadow: 0 0 5px var(--primary-color);
-        }
-
-        .toggle-slider:before {
-            position: absolute;
-            content: "";
-            height: 22px;
-            width: 22px;
-            left: 4px;
-            bottom: 4px;
-            background-color: var(--primary-color);
-            transition: .4s;
-        }
-
-        input:checked + .toggle-slider {
-            background-color: var(--dark-color);
-        }
-
-        input:checked + .toggle-slider:before {
-            transform: translateX(28px);
-            background-color: var(--accent-color);
-        }
-
-        .toggle-slider.round {
-            border-radius: 34px;
-        }
-
-        .toggle-slider.round:before {
-            border-radius: 50%;
-        }
-
-        .toggle-icon {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary-color);
-            font-size: 14px;
-        }
-
-        .toggle-icon.sun {
-            left: 8px;
-        }
-
-        .toggle-icon.moon {
-            right: 8px;
-        }
-
-        /* 3D Card Effect */
-        .card-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-        }
-
-        .card-3d:hover {
-            transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
-        }
-
-        /* Matrix Rain Effect */
-        .matrix-rain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            opacity: 0.05;
-            pointer-events: none;
+                }
         }
     </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
-    <!-- Efeito de Grid Digital -->
-    <div class="digital-grid"></div>
-    
-    <!-- Matrix Rain Effect -->
-    <canvas id="matrix-rain" class="matrix-rain"></canvas>
-    
-    <!-- Dark Mode Toggle -->
-    <div class="dark-mode-toggle">
-        <label class="toggle-switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="toggle-slider round">
-                <i class="fas fa-sun toggle-icon sun"></i>
-                <i class="fas fa-moon toggle-icon moon"></i>
-            </span>
-        </label>
-    </div>
-    
-    <!-- Loader Futurista -->
-    <div class="loader-wrapper">
-        <div class="loader">
-            <div class="hexagon"></div>
-            <div class="hexagon"></div>
-            <div class="hexagon"></div>
-            <p class="loading-text">CARREGANDO SISTEMA...</p>
-        </div>
-    </div>
+    <!-- Efeito Matrix Intenso -->
+    <canvas id="matrixCanvas" class="matrix-bg"></canvas>
     
     <!-- Navbar Holográfica -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -1063,8 +860,7 @@
     </nav>
 
     <!-- Hero Section - Estilo Terminal -->
-    <section id="home" class="hero">
-        <div id="particles-js"></div>
+        <section id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 hero-content" data-aos="fade-right">
@@ -1084,15 +880,12 @@
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
-                    <div class="holographic-avatar">
-                        <div class="avatar-container">
-                            <img src="tercio.png" alt="Tercio Alves Parente" class="avatar-img">
-                            <div class="avatar-hover-effect"></div>
-                            <div class="avatar-ring"></div>
-                            <div class="avatar-ring"></div>
-                            <div class="avatar-ring"></div>
-                        </div>
-                        <div class="hologram-effect"></div>
+                    <div class="avatar-container">
+                        <img src="tercio.png" alt="Tercio Alves Parente" class="avatar-img">
+                        <div class="avatar-hover-effect"></div>
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-ring"></div>
                     </div>
                 </div>
             </div>
@@ -1566,8 +1359,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     
     <script>
         // Inicialização quando o DOM estiver pronto
@@ -1603,27 +1395,7 @@
                     }
                 }
             }).mount();
-            
-            // Efeito de partículas
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 100, density: { enable: true, value_area: 800 } },
-                    color: { value: "#00f0ff" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.5, random: true },
-                    size: { value: 3, random: true },
-                    line_linked: { enable: true, distance: 150, color: "#00f0ff", opacity: 0.4, width: 1 },
-                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
-                },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" }
-                    }
-                }
-            });
-            
+                
             // Mostrar/ocultar botão de voltar ao topo
             const backToTopButton = document.getElementById('backToTop');
             window.addEventListener('scroll', function() {
@@ -1674,81 +1446,69 @@
                     }, 1500);
                 });
             }
-            
-            // Remover loader quando a página carregar
-            window.addEventListener('load', function() {
-                setTimeout(() => {
-                    document.querySelector('.loader-wrapper').style.opacity = '0';
-                    setTimeout(() => {
-                        document.querySelector('.loader-wrapper').style.display = 'none';
-                    }, 500);
-                }, 1000);
-            });
 
-            // Matrix Rain Effect
-            const matrixCanvas = document.getElementById('matrix-rain');
-            if (matrixCanvas) {
-                const ctx = matrixCanvas.getContext('2d');
+            // Efeito Matrix Intenso
+            const matrixCanvas = document.getElementById('matrixCanvas');
+            const ctx = matrixCanvas.getContext('2d');
+            
+            // Configurar canvas para ocupar toda a tela
+            matrixCanvas.width = window.innerWidth;
+            matrixCanvas.height = window.innerHeight;
+            
+            // Caracteres do efeito Matrix (katakana + caracteres ocidentais)
+            const matrixChars = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            
+            // Configuração das colunas
+            const fontSize = 18;
+            const columns = Math.floor(matrixCanvas.width / fontSize);
+            
+            // Array para rastrear a posição Y de cada coluna
+            const drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * -100; // Começa em posições aleatórias acima da tela
+            }
+            
+            // Configuração do efeito
+            const speed = 0.5; // Velocidade aumentada
+            const intensity = 0.90; // Intensidade do rastro
+            
+            function drawMatrix() {
+                // Fundo semi-transparente para criar o efeito de rastro
+                ctx.fillStyle = 'rgba(0, 5, 10, 0.05)';
+                ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
                 
+                // Configuração do texto
+                ctx.fillStyle = '#0f0';
+                ctx.font = `${fontSize}px monospace`;
+                
+                // Desenha os caracteres em cada coluna
+                for (let i = 0; i < drops.length; i++) {
+                    const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                    
+                    // Desenha o caractere
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    // Reinicia a coluna quando chega ao final da tela
+                    if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    
+                    // Move a coluna para baixo
+                    drops[i] += speed;
+                }
+            }
+            
+            // Inicia a animação (60 FPS)
+            setInterval(drawMatrix, 1000/60);
+            
+            // Redimensiona o canvas quando a janela é redimensionada
+            window.addEventListener('resize', () => {
                 matrixCanvas.width = window.innerWidth;
                 matrixCanvas.height = window.innerHeight;
-                
-                const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-                const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                const nums = '0123456789';
-                const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
-                
-                const alphabet = katakana + latin + nums + symbols;
-                
-                const fontSize = 16;
-                const columns = matrixCanvas.width / fontSize;
-                
-                const rainDrops = [];
-                
-                for (let x = 0; x < columns; x++) {
-                    rainDrops[x] = 1;
-                }
-                
-                const draw = () => {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-                    ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-                    
-                    ctx.fillStyle = '#0F0';
-                    ctx.font = fontSize + 'px monospace';
-                    
-                    for (let i = 0; i < rainDrops.length; i++) {
-                        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-                        
-                        if (rainDrops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
-                            rainDrops[i] = 0;
-                        }
-                        rainDrops[i]++;
-                    }
-                };
-                
-                setInterval(draw, 30);
-                
-                window.addEventListener('resize', () => {
-                    matrixCanvas.width = window.innerWidth;
-                    matrixCanvas.height = window.innerHeight;
-                });
-            }
+            });
 
-            // Dark Mode Toggle
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            if (darkModeToggle) {
-                darkModeToggle.addEventListener('change', function() {
-                    document.body.classList.toggle('dark-mode');
-                    // Aqui você pode adicionar lógica para salvar a preferência do usuário
-                });
-            }
-        });
-         
-        // Animar barras de progresso quando a seção for visualizada
-        function animateProgressBars() {
-            const progressBars = document.querySelectorAll('.progress-bar');
-            
+            // Animar barras de progresso quando a seção for visualizada
+                const progressBars = document.querySelectorAll('.progress-bar');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1762,10 +1522,7 @@
             progressBars.forEach(bar => {
                 observer.observe(bar);
             });
-        }
-
-        // Chamar a função quando a página carregar
-        document.addEventListener('DOMContentLoaded', animateProgressBars);
+        });
     </script>
 </body>
 </html>
