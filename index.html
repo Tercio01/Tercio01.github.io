@@ -535,6 +535,107 @@
             box-shadow: 0 0 20px var(--primary-color);
         }
         
+        /* Avatar Circular Interativo */
+        .avatar-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .avatar-hover-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 50%, var(--primary-color) 150%);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+        
+        .avatar-container:hover .avatar-img {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--primary-color), 0 0 50px var(--primary-color);
+        }
+        
+        .avatar-container:hover .avatar-hover-effect {
+            opacity: 0.3;
+            transform: scale(1.1);
+        }
+        
+        .avatar-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: rotate 15s linear infinite;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .avatar-ring:nth-child(2) {
+            animation-delay: 0.5s;
+            animation-direction: reverse;
+        }
+        
+        .avatar-ring:nth-child(3) {
+            animation-delay: 1s;
+            animation-duration: 20s;
+        }
+        
+        .avatar-container:hover .avatar-ring {
+            opacity: 0.7;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Holographic Avatar */
+        .holographic-avatar {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+        }
+        
+        .hologram-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 30%, var(--primary-color) 150%);
+            opacity: 0.3;
+            animation: pulse 4s infinite alternate;
+            z-index: 1;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.2; transform: scale(0.95); }
+            100% { opacity: 0.4; transform: scale(1.05); }
+        }
+        
         /* Responsividade */
         @media (max-width: 992px) {
             .hero h1 {
@@ -547,6 +648,11 @@
             
             section {
                 padding: 6rem 0;
+            }
+            
+            .avatar-container, .holographic-avatar {
+                width: 250px;
+                height: 250px;
             }
         }
         
@@ -566,11 +672,17 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .avatar-container, .holographic-avatar {
+                width: 200px;
+                height: 200px;
+            }
+            
             .compact-title {
-        font-size: 0.9rem;
-        line-height: 1.2;
-        word-break: break-word;
-    }
+                font-size: 0.9rem;
+                line-height: 1.2;
+                word-break: break-word;
+            }
         }
     </style>
 </head>
@@ -625,7 +737,7 @@
 
     <!-- Hero Section - Estilo Terminal -->
     <section id="home" class="hero">
-            <div id="particles-js"></div>
+        <div id="particles-js"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 hero-content" data-aos="fade-right">
@@ -641,12 +753,18 @@
                         <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://twitter.com/" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:contato@tercio.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:tercio1parente@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
                     <div class="holographic-avatar">
-                        <img src="tercio.png" alt="Tercio Alves Parente" class="img-fluid avatar-img">
+                        <div class="avatar-container">
+                            <img src="tercio.png" alt="Tercio Alves Parente" class="avatar-img">
+                            <div class="avatar-hover-effect"></div>
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-ring"></div>
+                        </div>
                         <div class="hologram-effect"></div>
                     </div>
                 </div>
@@ -670,9 +788,12 @@
                 </div>
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                        <div class="holographic-display">
-                            <img src="tercio.png" alt="Tercio Alves Parente" class="img-fluid display-img">
-                            <div class="hologram-grid"></div>
+                        <div class="avatar-container">
+                            <img src="tercio.png" alt="Tercio Alves Parente" class="avatar-img">
+                            <div class="avatar-hover-effect"></div>
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-ring"></div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
@@ -835,7 +956,7 @@
                         <ul class="glide__slides">
                             <li class="glide__slide">
                                 <div class="project-card card">
-                                    <img src="https://via.placeholder.com/800x500" class="card-img-top project-img" alt="Projeto 1">
+                                    <img src="gerenciamento.jpg" class="card-img-top project-img" alt="Projeto 1">
                                     <div class="project-overlay">
                                         <h5>SISTEMA DE GERENCIAMENTO DE SEGURANÇA</h5>
                                         <p class="mb-3">Plataforma integrada para monitoramento e gestão de segurança corporativa com análise em tempo real.</p>
@@ -852,7 +973,7 @@
                             </li>
                             <li class="glide__slide">
                                 <div class="project-card card">
-                                    <img src="https://via.placeholder.com/800x500" class="card-img-top project-img" alt="Projeto 2">
+                                    <img src="vulnerabilidade.jpg" class="card-img-top project-img" alt="Projeto 2">
                                     <div class="project-overlay">
                                         <h5>ANÁLISE DE VULNERABILIDADES</h5>
                                         <p class="mb-3">Ferramenta avançada para identificação e correção de vulnerabilidades em sistemas corporativos.</p>
@@ -1184,27 +1305,28 @@
                 }, 1000);
             });
         });
-         // Animar barras de progresso quando a seção for visualizada
-    function animateProgressBars() {
-        const progressBars = document.querySelectorAll('.progress-bar');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.getAttribute('data-width');
-                    entry.target.style.width = width;
-                    observer.unobserve(entry.target);
-                }
+         
+        // Animar barras de progresso quando a seção for visualizada
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            progressBars.forEach(bar => {
+                observer.observe(bar);
             });
-        }, { threshold: 0.5 });
+        }
 
-        progressBars.forEach(bar => {
-            observer.observe(bar);
-        });
-    }
-
-    // Chamar a função quando a página carregar
-    document.addEventListener('DOMContentLoaded', animateProgressBars);
+        // Chamar a função quando a página carregar
+        document.addEventListener('DOMContentLoaded', animateProgressBars);
     </script>
 </body>
-    </html>
+</html>
