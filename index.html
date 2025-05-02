@@ -40,7 +40,7 @@
             background-color: var(--dark-color);
             color: var(--light-color);
             line-height: 1.7;
-                overflow-x: hidden;
+            overflow-x: hidden;
         }
 
         /* Efeito Matrix Intenso */
@@ -49,7 +49,7 @@
             top: 0;
             left: 0;
             width: 100%;
-                height: 100%;
+            height: 100%;
             z-index: -1;
             opacity: 0.8;
         }
@@ -290,14 +290,14 @@
             left: 100%;
             top: 100%;
         }
-        
+
         /* Seções com Efeito de Circuito */
         section {
             padding: 8rem 0;
             position: relative;
             overflow: hidden;
         }
-        
+
         .section-title {
             position: relative;
             margin-bottom: 5rem;
@@ -322,310 +322,13 @@
             box-shadow: var(--neon-glow);
         }
 
-        /* Efeito de Circuito nos Cards de Habilidade */
-        .skill-card {
-            position: relative;
-            padding: 2rem;
-            height: 100%;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            clip-path: polygon(
-                0% 0%, 100% 0%, 100% 100%, 0% 100%,
-                0% 0%, 10px 10px, calc(100% - 10px) 10px, 10px calc(100% - 10px), calc(100% - 10px) calc(100% - 10px)
-            );
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            text-shadow: var(--neon-glow);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Barra de Progresso Futurista */
-        .skill-progress {
-            height: 8px;
-            background: rgba(0, 240, 255, 0.1);
-            border-radius: 0;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: var(--primary-color);
-            box-shadow: var(--neon-glow);
-            position: relative;
-            width: 0;
-            transition: width 1.5s ease-out;
-        }
-
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-            animation: progressGlow 2s infinite;
-        }
-
-        @keyframes progressGlow {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* Carrossel de Projetos Futurista */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            transition: all 0.5s ease;
-        }
-
-        .project-img {
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s;
-            filter: grayscale(30%) contrast(1.1);
-        }
-
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-            filter: grayscale(0%) contrast(1.2);
-        }
-
-        .project-overlay {
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            padding: 2rem;
-            background: rgba(5, 10, 20, 0.9);
-            border-top: 1px solid var(--primary-color);
-            transition: bottom 0.5s;
-        }
-
-        .project-card:hover .project-overlay {
-            bottom: 0;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tag {
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--primary-color);
-            padding: 0.25rem 0.75rem;
-            font-size: 0.8rem;
-            font-family: 'Share Tech Mono', monospace;
-        }
-
-        /* Linha do Tempo Futurista */
-        .timeline {
-            position: relative;
-            padding-left: 50px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px;
-            height: 100%;
-            width: 2px;
-            background: var(--primary-color);
-            box-shadow: var(--neon-glow);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: -50px;
-            top: 0;
-            font-family: 'Orbitron', sans-serif;
-            color: var(--primary-color);
-            text-shadow: var(--neon-glow);
-            font-size: 1.2rem;
-        }
-
-        .timeline-content {
-            padding: 2rem;
-            position: relative;
-        }
-        
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: -10px;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-color);
-            box-shadow: var(--neon-glow);
-            transform: rotate(45deg);
-        }
-        
-        /* Formulário Futurista */
-        .form-control {
-            background: rgba(10, 20, 30, 0.7);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            border-radius: 0;
-            color: var(--light-color);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            transition: all var(--transition-speed);
-            font-family: 'Share Tech Mono', monospace;
-        }
-        
-        .form-control:focus {
-            background: rgba(15, 30, 45, 0.7);
-            border-color: var(--primary-color);
-            box-shadow: var(--neon-glow);
-            color: var(--light-color);
-        }
-        
-        /* Footer Holográfico */
-        footer {
-            padding: 4rem 0;
-            background: rgba(5, 10, 20, 0.8);
-            border-top: 1px solid rgba(0, 240, 255, 0.3);
-            position: relative;
-        }
-            
-        /* Botão Flutuante */
-        .back-to-top {
-            position: fixed;
-            right: 30px;
-            bottom: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            color: var(--dark-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 999;
-            box-shadow: var(--neon-glow);
-            border: none;
-            font-size: 1.5rem;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 0 20px var(--primary-color);
-        }
-        
-        /* Avatar Circular Interativo */
-        .avatar-container {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            margin: 0 auto;
-            perspective: 1000px;
-        }
-        
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-            box-shadow: 0 0 20px var(--primary-color);
-            transition: all 0.5s ease;
-            position: relative;
-            z-index: 2;
-            transform-style: preserve-3d;
-        }
-        
-        .avatar-hover-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle, transparent 50%, var(--primary-color) 150%);
-            opacity: 0;
-            transition: all 0.5s ease;
-            z-index: 1;
-        }
-        
-        .avatar-container:hover .avatar-img {
-            transform: scale(1.05) rotateY(10deg);
-            box-shadow: 0 0 30px var(--primary-color), 0 0 50px var(--primary-color);
-        }
-        
-        .avatar-container:hover .avatar-hover-effect {
-            opacity: 0.3;
-            transform: scale(1.1);
-        }
-        
-        .avatar-ring {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 2px solid var(--primary-color);
-            border-radius: 50%;
-            animation: rotate 15s linear infinite;
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-        
-        .avatar-ring:nth-child(2) {
-            animation-delay: 0.5s;
-            animation-direction: reverse;
-        }
-        
-        .avatar-ring:nth-child(3) {
-            animation-delay: 1s;
-            animation-duration: 20s;
-        }
-        
-        .avatar-container:hover .avatar-ring {
-            opacity: 0.7;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-            
         /* Terminal Window */
         .terminal-window {
             background: rgba(5, 10, 20, 0.8);
             border: 1px solid var(--primary-color);
             box-shadow: var(--neon-glow);
-            position: relative;
+                position: relative;
+            height: 100%;
         }
 
         .terminal-header {
@@ -670,6 +373,9 @@
         .terminal-body {
             padding: 1.5rem;
             font-family: 'Share Tech Mono', monospace;
+            height: calc(100% - 45px);
+            display: flex;
+            flex-direction: column;
         }
 
         .terminal-text {
@@ -688,6 +394,87 @@
 
         .terminal-cursor {
             animation: blink 0.75s step-end infinite;
+        }
+
+        /* Barra de Progresso Futurista */
+        .skill-progress {
+            height: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 0;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            box-shadow: var(--neon-glow);
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            animation: progressGlow 2s infinite;
+        }
+
+        @keyframes progressGlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Efeito de Circuito nos Cards de Habilidade */
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+         /* Linha do Tempo Futurista */
+        .timeline-item {
+            margin-bottom: 2rem;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            position: relative;
+            border-left: 2px solid var(--primary-color);
+            margin-left: 20px;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -11px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            box-shadow: var(--neon-glow);
+            transform: rotate(45deg);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--primary-color);
         }
 
         /* Social Icons */
@@ -723,49 +510,7 @@
         .social-icon:hover::after {
             width: 100%;
         }
-
-        /* Scroll Down Indicator */
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .chevron {
-            width: 20px;
-            height: 20px;
-            border-right: 2px solid var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            transform: rotate(45deg);
-            margin: -5px;
-            animation: pulse-arrow 2s infinite;
-            box-shadow: var(--neon-glow);
-        }
-
-        .chevron:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .chevron:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .chevron:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        @keyframes pulse-arrow {
-            0% { opacity: 0; transform: rotate(45deg) translateY(-20px); }
-            50% { opacity: 1; }
-            100% { opacity: 0; transform: rotate(45deg) translateY(20px); }
-        }
-
+        
         /* 3D Card Effect */
         .card-3d {
             transform-style: preserve-3d;
@@ -788,12 +533,7 @@
             
             section {
                 padding: 6rem 0;
-            }
-            
-            .avatar-container {
-                width: 250px;
-                height: 250px;
-            }
+                }
         }
         
         @media (max-width: 768px) {
@@ -810,12 +550,7 @@
             }
             
             .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .avatar-container {
-                width: 200px;
-                height: 200px;
+                    font-size: 2rem;
                 }
         }
     </style>
@@ -860,7 +595,7 @@
     </nav>
 
     <!-- Hero Section - Estilo Terminal -->
-        <section id="home" class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 hero-content" data-aos="fade-right">
@@ -880,12 +615,13 @@
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
-                    <div class="avatar-container">
-                        <img src="tercio.png" alt="Tercio Alves Parente" class="avatar-img">
-                        <div class="avatar-hover-effect"></div>
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-ring"></div>
+                    <div class="avatar-container" style="width: 500px; height: 500px;">
+                        <img src="tercio.png" alt="Tercio Alves Parente" 
+                            class="avatar-img rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="avatar-hover-effect rounded-circle"></div>
+                        <div class="avatar-ring rounded-circle"></div>
+                        <div class="avatar-ring rounded-circle"></div>
+                        <div class="avatar-ring rounded-circle"></div>
                     </div>
                 </div>
             </div>
@@ -908,12 +644,13 @@
                 </div>
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                        <div class="avatar-container">
-                            <img src="tercio.png" alt="Tercio Alves Parente" class="avatar-img">
-                            <div class="avatar-hover-effect"></div>
-                            <div class="avatar-ring"></div>
-                            <div class="avatar-ring"></div>
-                            <div class="avatar-ring"></div>
+                        <div class="avatar-container mx-auto" style="width: 450px; height: 450px;">
+                            <img src="tercio.png" alt="Tercio Alves Parente" 
+                                class="avatar-img rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="avatar-hover-effect rounded-circle"></div>
+                            <div class="avatar-ring rounded-circle"></div>
+                            <div class="avatar-ring rounded-circle"></div>
+                            <div class="avatar-ring rounded-circle"></div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
@@ -924,7 +661,7 @@
                                     <span class="terminal-btn yellow"></span>
                                     <span class="terminal-btn green"></span>
                                 </div>
-                                <div class="terminal-title">sobre_tercio.exe</div>
+                                <div class="terminal-title">Sobre Tercio Alves Parente</div>
                             </div>
                             <div class="terminal-body">
                                 <p class="terminal-text"><span class="terminal-prompt">></span> Olá, eu sou Tercio Alves Parente</p>
@@ -983,7 +720,7 @@
             </div>
         </section>
         
-        <!-- Habilidades - Estilo Painel de Habilidades -->
+        <!-- Habilidades - Estilo Terminal Window -->
         <section id="skills" class="py-5 bg-dark">
             <div class="container">
                 <div class="section-title text-center" data-aos="fade-up">
@@ -992,96 +729,102 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-6" data-aos="fade-right">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>PROGRAMAÇÃO ORIENTADA A OBJETOS</span>
-                                <span>85%</span>
+                    <div class="col-lg-6 mb-4" data-aos="fade-right">
+                        <div class="terminal-window p-4 card-3d h-100">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <div class="terminal-title">habilidades_principais.exe</div>
                             </div>
-                            <div class="skill-progress">
-                                <div class="progress-bar" data-width="85%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>PYTHON</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="progress-bar" data-width="80%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>FRONT-END WEB</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="progress-bar" data-width="75%"></div>
+                            <div class="terminal-body">
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Linguagens:</span> Python, JavaScript, Java, C#, SQL</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Front-end:</span> React, Vue.js, HTML5, CSS3, Bootstrap</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Back-end:</span> Node.js, Django, Flask, .NET Core</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Banco de Dados:</span> PostgreSQL, MySQL, MongoDB, Redis</p>
+                                
+                                <div class="mt-4">
+                                    <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Nível de Habilidade:</span></p>
+                                    <div class="skill-item">
+                                        <div class="skill-name">
+                                            <span>PYTHON</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">
+                                            <span>JAVASCRIPT</span>
+                                            <span>80%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" data-width="80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">
+                                            <span>REACT.JS</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" data-width="75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-md-6" data-aos="fade-left">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>BANCO DE DADOS RELACIONAL</span>
-                                <span>70%</span>
+                    <div class="col-lg-6 mb-4" data-aos="fade-left">
+                        <div class="terminal-window p-4 card-3d h-100">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <div class="terminal-title">seguranca_devops.exe</div>
                             </div>
-                            <div class="skill-progress">
-                                <div class="progress-bar" data-width="70%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>ANÁLISE DE VULNERABILIDADES</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="progress-bar" data-width="90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>GIT</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="progress-bar" data-width="85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row mt-5">
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card h-100 card-3d">
-                            <div class="card-body text-center">
-                                <i class="fas fa-code skill-icon"></i>
-                                <h4>Desenvolvimento</h4>
-                                <p>Arquitetura de software limpa e escalável com foco em segurança desde o design.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card h-100 card-3d">
-                            <div class="card-body text-center">
-                                <i class="fas fa-shield-alt skill-icon"></i>
-                                <h4>Segurança</h4>
-                                <p>Análise de vulnerabilidades, pentesting e implementação de medidas defensivas.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card h-100 card-3d">
-                            <div class="card-body text-center">
-                                <i class="fas fa-server skill-icon"></i>
-                                <h4>DevOps</h4>
-                                <p>CI/CD, containerização e infraestrutura como código com segurança integrada.</p>
+                            <div class="terminal-body">
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Segurança:</span> Pentesting, OWASP, Criptografia, Firewalls</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">DevOps:</span> Docker, Kubernetes, AWS, CI/CD</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Metodologias:</span> Ágil, Scrum, Kanban, TDD</p>
+                                <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Ferramentas:</span> Git, VS Code, Postman, Jira</p>
+                                
+                                <div class="mt-4">
+                                    <p class="terminal-text"><span class="terminal-prompt">></span> <span class="text-primary">Nível de Habilidade:</span></p>
+                                    <div class="skill-item">
+                                        <div class="skill-name">
+                                            <span>SEGURANÇA CIBERNÉTICA</span>
+                                            <span>90%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" data-width="90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">
+                                            <span>DOCKER/KUBERNETES</span>
+                                            <span>80%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" data-width="80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">
+                                            <span>GIT</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1179,7 +922,7 @@
             </div>
         </section>
 
-        <!-- Formação - Estilo Linha do Tempo Digital -->
+        <!-- Formação - Estilo Terminal Window -->
         <section id="education" class="py-5 bg-dark">
             <div class="container">
                 <div class="section-title text-center" data-aos="fade-up">
@@ -1187,46 +930,90 @@
                     <p class="lead">MINHA JORNADA DE APRENDIZADO</p>
                 </div>
                 
-                <div class="timeline" data-aos="fade-up">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2021 - PRESENTE</div>
-                        <div class="timeline-content card card-3d">
-                            <h4>ENGENHARIA DE SOFTWARE</h4>
-                            <p class="text-muted">UNIVERSIDADE XYZ</p>
-                            <p>Graduação com foco em desenvolvimento seguro, arquitetura de software e gestão de projetos ágeis.</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary">TCC: Análise de Vulnerabilidades em APIs REST</span>
+                <div class="row">
+                    <div class="col-lg-6 mb-4" data-aos="fade-right">
+                        <div class="terminal-window p-4 card-3d h-100">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <div class="terminal-title">Formacao Academica</div>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2022 - PRESENTE</span>
+                                    <div class="timeline-content">
+                                        <h4 class="text-primary">ENGENHARIA DE SOFTWARE</h4>
+                                        <p class="text-muted">ANHANGUERA EDUCACIONAL</p>
+                                        <p>Graduação com foco em desenvolvimento seguro, arquitetura de software e gestão de projetos ágeis.</p>
+                                        <div class="mt-3">
+                                            <span class="badge bg-primary">TCC: Análise de Vulnerabilidades em APIs REST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2020 - 2021</span>
+                                    <div class="timeline-content">
+                                        <h4 class="text-primary">ESPECIALIZAÇÃO EM CIBERSEGURANÇA</h4>
+                                        <p class="text-muted">INSTITUTO DE TECNOLOGIA ABC</p>
+                                        <p>Curso avançado cobrindo análise de vulnerabilidades, pentest, criptografia e segurança em nuvem.</p>
+                                        <div class="mt-3">
+                                            <span class="badge bg-primary">Certificação: Ethical Hacker</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020 - 2021</div>
-                        <div class="timeline-content card card-3d">
-                            <h4>ESPECIALIZAÇÃO EM CIBERSEGURANÇA</h4>
-                            <p class="text-muted">INSTITUTO DE TECNOLOGIA ABC</p>
-                            <p>Curso avançado cobrindo análise de vulnerabilidades, pentest, criptografia e segurança em nuvem.</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary">Certificação: Ethical Hacker</span>
+                    
+                    <div class="col-lg-6 mb-4" data-aos="fade-left">
+                        <div class="terminal-window p-4 card-3d h-100">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <div class="terminal-title">Certificacoes</div>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2025</span>
+                                    <div class="timeline-content">
+                                        <h4 class="text-primary">CERTIFIED ETHICAL HACKER (CEH)</h4>
+                                        <p class="text-muted">EC-COUNCIL</p>
+                                        <p>Certificação em testes de invasão éticos e técnicas de segurança ofensiva.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2024</span>
+                                    <div class="timeline-content">
+                                        <h4 class="text-primary">AWS CERTIFIED SOLUTIONS ARCHITECT</h4>
+                                        <p class="text-muted">AMAZON WEB SERVICES</p>
+                                        <p>Arquitetura de soluções escaláveis e seguras na nuvem AWS.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2025</span>
+                                    <div class="timeline-content">
+                                        <h4 class="text-primary">CERTIFICAÇÃO EM REDES CISCO (CCNA)</h4>
+                                        <p class="text-muted">CISCO NETWORKING ACADEMY</p>
+                                        <p>Fundamentos de redes, protocolos e segurança em infraestrutura de TI.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="terminal-command mt-4">
+                                    <span class="terminal-prompt">></span> 
+                                    <span class="text-primary">Atualmente estudando:</span> Segurança em Cloud Computing e DevSecOps
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2019</div>
-                        <div class="timeline-content card card-3d">
-                            <h4>CERTIFICAÇÃO EM REDES</h4>
-                            <p class="text-muted">CISCO NETWORKING ACADEMY</p>
-                            <p>Fundamentos de redes, protocolos e segurança em infraestrutura de TI.</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary">CCNA: Routing and Switching</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-5">
-                    <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#certificationsModal">
-                        <i class="fas fa-certificate me-2"></i>VER CERTIFICAÇÕES
-                    </button>
                 </div>
             </div>
         </section>
@@ -1317,7 +1104,7 @@
                     <a href="#" class="navbar-brand mb-3 d-inline-block">
                         <span class="brand-glitch">TAP_</span>
                     </a>
-                    <p class="mb-0">© 2023 TERCIO ALVES PARENTE. TODOS OS DIREITOS RESERVADOS.</p>
+                    <p class="mb-0">© 2025 TERCIO ALVES PARENTE. TODOS OS DIREITOS RESERVADOS.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="#" class="text-decoration-none me-3">POLÍTICA DE PRIVACIDADE</a>
@@ -1359,14 +1146,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     
     <script>
         // Inicialização quando o DOM estiver pronto
         document.addEventListener('DOMContentLoaded', function() {
             // Animação de digitação
             var typed = new Typed('#typed-text', {
-                strings: ['ENGENHEIRO DE SOFTWARE', 'ESPECIALISTA EM CIBERSEGURANÇA', 'DESENVOLVEDOR FULL-STACK'],
+                strings: ['ENGENHEIRO DE SOFTWARE', 'ESPECIALISTA EM CIBERSEGURANÇA', 'GESTÃO DE PROJETOS','METODOLOGIAS ÁGEIS'],
                 typeSpeed: 50,
                 backSpeed: 30,
                 loop: true,
@@ -1395,7 +1182,7 @@
                     }
                 }
             }).mount();
-                
+            
             // Mostrar/ocultar botão de voltar ao topo
             const backToTopButton = document.getElementById('backToTop');
             window.addEventListener('scroll', function() {
@@ -1470,7 +1257,7 @@
             
             // Configuração do efeito
             const speed = 0.5; // Velocidade aumentada
-            const intensity = 0.90; // Intensidade do rastro
+            const intensity = 0.98; // Intensidade do rastro
             
             function drawMatrix() {
                 // Fundo semi-transparente para criar o efeito de rastro
@@ -1508,7 +1295,7 @@
             });
 
             // Animar barras de progresso quando a seção for visualizada
-                const progressBars = document.querySelectorAll('.progress-bar');
+            const progressBars = document.querySelectorAll('.progress-bar');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
